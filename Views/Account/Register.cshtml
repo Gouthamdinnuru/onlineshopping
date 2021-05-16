@@ -1,0 +1,71 @@
+﻿@model CaseStudy.Models.User_tbl
+
+@{
+    ViewBag.Title = "Register";
+}
+
+@*@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/Images/Light1.jpg');
+            margin: 50px;
+        }
+    </style>
+}*@
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Registeration Failed, check the fields...", new { @class = "text-danger" });
+    <div>
+        <fieldset>
+            <legend>Register Form</legend>
+            @*<div class="editor-label">@Html.LabelFor(u => u.UserID)</div>*@
+            @*<div class="editor-field">
+                @Html.TextBoxFor(u => u.UserID)
+                @Html.ValidationMessageFor(u => u.UserID, "", new { @class = "text-danger" })
+            </div>*@
+            <div class="editor-label">@Html.LabelFor(u => u.UserName)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.UserName)
+                @Html.ValidationMessageFor(u => u.UserName, "", new { @class = "text-danger" })
+            </div>
+            <div class="editor-label">@Html.LabelFor(u => u.Password)</div>
+            <div class="editor-field" type="password">
+                @Html.TextBoxFor(u => u.Password)
+                @Html.ValidationMessageFor(u => u.Password, "", new { @class = "text-danger" })
+            </div>
+            <div class="editor-label">@Html.LabelFor(u => u.ConfirmPassword)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.ConfirmPassword)
+                @Html.ValidationMessageFor(u => u.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+            <div class="editor-label">@Html.LabelFor(u => u.EmailAddress)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.EmailAddress)
+                @Html.ValidationMessageFor(u => u.EmailAddress, "", new { @class = "text-danger" })
+            </div>
+            <div class="editor-label">@Html.LabelFor(u => u.PhoneNumber)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.PhoneNumber)
+                @Html.ValidationMessageFor(u => u.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+            <div class="editor-label">@Html.LabelFor(u => u.Gender)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.Gender)
+                @Html.ValidationMessageFor(u => u.Gender, "", new { @class = "text-danger" })
+            </div>
+            <div class="editor-label">@Html.LabelFor(u => u.Address)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.Address)
+                @Html.ValidationMessageFor(u => u.Address, "", new { @class = "text-danger" })
+            </div>
+            @*<p>Copy this role ID if u r customer:2368</p>
+            <div class="editor-label">@Html.LabelFor(u => u.RoleId)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(u => u.RoleId)
+                @Html.ValidationMessageFor(u => u.RoleId, "", new { @class = "text-danger" })
+            </div>*@
+
+            <input type="submit" value="Register" />
+        </fieldset>
+    </div>}
